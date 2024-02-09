@@ -20,14 +20,14 @@ df = pd.read_csv(ticker + '.csv', parse_dates=['Date'],
 #Filter the data
 yearsData = list(df.index.year.unique())
 
-year1 = st.sidebar.selectbox("Pick a start year", yearsData)
-year2 = st.sidebar.selectbox("Pick an end year", yearsData) #last year
+#year1 = st.sidebar.selectbox("Pick a start year", yearsData)
+#year2 = st.sidebar.selectbox("Pick an end year", yearsData) #last year
 start_date = st.sidebar.date_input('Start Date', df.index.min())
 end_date = st.sidebar.date_input('End Date', df.index.max())
 
-df = df.loc[str(year1):str(year2)]
+#df = df.loc[str(year1):str(year2)]
             #df.loc['2016':'2018']
-
+df = df.loc[start_date:end_date]
 
 
 #Create a chart
