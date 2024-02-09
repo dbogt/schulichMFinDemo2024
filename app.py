@@ -22,6 +22,9 @@ yearsData = list(df.index.year.unique())
 
 year1 = st.sidebar.selectbox("Pick a start year", yearsData)
 year2 = st.sidebar.selectbox("Pick an end year", yearsData) #last year
+start_date = st.sidebar.date_input('Start Date', df.index.min())
+end_date = st.sidebar.date_input('End Date', df.index.max())
+
 df = df.loc[str(year1):str(year2)]
             #df.loc['2016':'2018']
 
