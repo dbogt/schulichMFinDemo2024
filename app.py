@@ -21,7 +21,7 @@ df = pd.read_csv(ticker + '.csv', parse_dates=['Date'],
 yearsData = list(df.index.year.unique())
 
 year1 = st.sidebar.selectbox("Pick a start year", yearsData)
-year2 = st.sidebar.selectbox("Pick an end year", yearsData, index=-1) #last year
+year2 = st.sidebar.selectbox("Pick an end year", yearsData) #last year
 df = df.loc[str(year1):str(year2)]
             #df.loc['2016':'2018']
 
