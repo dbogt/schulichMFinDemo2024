@@ -44,8 +44,6 @@ figHist.update_layout(
 
 
 
-
-
 #Outputs
 st.title("Web App - Schulich Class")
 st.write("Demo example from Training the Street class")
