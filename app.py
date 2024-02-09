@@ -14,7 +14,7 @@ import plotly.express as px
 #Grab Data
 tickers = ['AAPL','DIS','NKE']
 ticker = st.sidebar.selectbox("Pick a ticker:",tickers)
-df = pd.read_csv('StockData/' + ticker + '.csv', parse_dates=['Date'],
+df = pd.read_csv(ticker + '.csv', parse_dates=['Date'],
                  index_col=['Date'])
 
 #Filter the data
