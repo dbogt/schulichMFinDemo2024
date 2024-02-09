@@ -36,11 +36,11 @@ fig = px.line(df, y='Adj Close')
 
 
 figHist = px.histogram(df, x=df['Returns'], nbins=100)
-    figHist.update_layout(
-        title='Distribution of Daily Returns',
-        xaxis_title='Daily Returns',
-        yaxis_title='Frequency',
-    )
+figHist.update_layout(
+    title='Distribution of Daily Returns',
+    xaxis_title='Daily Returns',
+    yaxis_title='Frequency',
+)
 
 
 
