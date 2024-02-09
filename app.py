@@ -29,13 +29,28 @@ end_date = st.sidebar.date_input('End Date', df.index.max())
             #df.loc['2016':'2018']
 df = df.loc[start_date:end_date]
 
+df['Returns'] = df['Adj Close'].pct_change()
 
 #Create a chart
 fig = px.line(df, y='Adj Close')
+
+
+figHist = px.histogram(df, x=df['Returns'], nbins=100)
+    figHist.update_layout(
+        title='Distribution of Daily Returns',
+        xaxis_title='Daily Returns',
+        yaxis_title='Frequency',
+    )
+
+
+
+
+
 #Outputs
 st.title("Web App - Schulich Class")
 st.write("Demo example from Training the Street class")
 st.plotly_chart(fig) #output plotly graph
+st.plotly_chart(figHist)
 st.write(df) #similar to print, but will show it in the app
 
 
